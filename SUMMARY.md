@@ -11,12 +11,14 @@
 
 ## DevOps
 
----
-
-* [Helm and Helmfile](helm-and-helmfile.md)
-* [Kubernetes](kubernetes.md)
+* [Kubernetes](devops/kubernetes.md)
+* [Helm and Helmfile](devops/helm-and-helmfile.md)
 
 ## OpenApi
 
 * [API client generation](openapi/generator.md)
+
+## HOSTING
+
+* [static website](hosting/static-website.md)
 
