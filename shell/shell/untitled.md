@@ -6,13 +6,20 @@ description: All best practices I know about bash
 
 ## Fail on error
 
-In most cases I wanted my script to exit on error. Sounds trivial although it's not.
+Usually, I wanted my script to exit on error. Sounds trivial although it's not. There are number of case that someting can go wrong. The most common are:
+
+* variable is not set
+* a given command fails during execution
+
+By default bash does not fail on the first encountered error. Instead it impassively continous exution till the end of the script. A simple yet powerful statement below can save you from many unwanted side effects:
 
 ```bash
 set -euo pipefail
 ```
 
-The `set -eo pipefail` ensures to exit immediately if with first command that fails, including those in pipeline.
+The `set -e` exits on failure of simple command. The `set -o pipefail` exits on first failed command in pipeline Finally  
+
+{% page-ref page="untitled.md" %}
 
 {% hint style="info" %}
 A trap on `ERR`, if set, is executed before the shell exits. 
@@ -27,39 +34,58 @@ set -euo pipefail
 ```
 {% endhint %}
 
-The `set -u`treats unset variables and parameters as an error when performing parameter expansion
+**Finaly** `set -u`treats unset variables and parameters as an error when performing parameter expansion
 
 {% hint style="warning" %}
 Not applicable to special parameters ‘@’ or ‘\*’
 {% endhint %}
 
 {% hint style="info" %}
-It can happen that there are some variable that may not be set and you are testing against variable existence:
+It is possible to use `set -u` and to test variable existence with `-z.`Access variable with default. empty value.
 
 ```text
-[[ -z "${UNSET_VAR}" ]] 
-```
-
-The above code would cause shell to exit if`set -u`is used. Instead acess variable with default value:
-
-```text
-[[ -z "${UNSET_VAR}" ]]
+[[ -z "${UNSET_VAR-}" ]] 
 ```
 {% endhint %}
+
+
 
 ## Cleanup
 
-{% hint style="info" %}
+Sometimes my script creates temporary files that should be removed regardless script exit code. The following code snippet is a good boilerplate:
+
 ```text
 function cleanup {
+  echo "Remove temporary files"
+}
+
+trap cleanup EXIT
+```
+
+### Pitfalls
+
+Try using trap with the below signals What behavior would you expect?
+
+```text
+trap cleanup EXIT ERR
+```
+
+## Q&A
+
+Can trap function perfrom endless loop if it fails and `set -e ?`
+
+```text
+set -e 
+function cleanup {
   local exitcode=$?
-  echo "Cleanup"
+  ls nonexisting_file
   return $exitcode;
 }
 
-trap cleanup ERR EXIT
+trap cleanup EXIT ERR
 ```
-{% endhint %}
+
+No, it will be performed only once.
 
 
 
