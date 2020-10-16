@@ -12,4 +12,5 @@
 ---
 
 * [Helm and Helmfile](helm-and-helmfile.md)
+* [Kubernetes](kubernetes.md)
 
