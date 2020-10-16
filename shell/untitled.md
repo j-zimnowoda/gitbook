@@ -33,7 +33,7 @@ A trap on `ERR`, if set, is executed before the shell exits.
  The shell does not exit if the command that fails is part of the test in an`if` statement, part of any command executed in a `&&` or `||` list except the command following the final `&&` or `||`
 
 ```bash
-set -euo pipefail
+set -eo pipefail
 [[ 1 > 2 ]] && echo "impossible" || echo "shell exits with 0"
 ```
 {% endhint %}
@@ -68,7 +68,7 @@ trap cleanup EXIT
 
 ### Pitfalls
 
-Try using trap with the below signals What behavior would you expect?
+Try using trap with the below signals. What behavior would you expect if some command fails?
 
 ```bash
 trap cleanup EXIT ERR
