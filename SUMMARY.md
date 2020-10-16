@@ -15,3 +15,11 @@
 * [Helm and Helmfile](helm-and-helmfile.md)
 * [Kubernetes](kubernetes.md)
 
+## OpenApi
+
+* [generator](openapi/generator.md)
+
+---
+
+* [jq](jq.md)
+
