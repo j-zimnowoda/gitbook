@@ -18,5 +18,5 @@
 
 ## OpenApi
 
-* [generator](openapi/generator.md)
+* [API client generation](openapi/generator.md)
 

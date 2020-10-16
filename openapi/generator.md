@@ -1,4 +1,4 @@
-# generator
+# API client generation
 
 ## Generate typescript API client
 

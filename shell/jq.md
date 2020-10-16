@@ -1,5 +1,7 @@
 # jq
 
+The `jq` is a very powerful tool. Whenever you think to write your own parser for your JSON document think twice.
+
 ## Examples
 
 ### Update package.json 
