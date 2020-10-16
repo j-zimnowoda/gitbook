@@ -5,6 +5,7 @@
 ## shell
 
 * [bash](shell/untitled.md)
+* [git](shell/git.md)
 * [yq](shell/yq.md)
 
 ## DevOps
