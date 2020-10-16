@@ -66,7 +66,7 @@ function cleanup {
 trap cleanup EXIT
 ```
 
-### Pitfalls
+**Pitfalls**
 
 Try using trap with the below signals. What behavior would you expect if some command fails?
 
@@ -74,9 +74,22 @@ Try using trap with the below signals. What behavior would you expect if some co
 trap cleanup EXIT ERR
 ```
 
+## Arrays
+
+Assign list of files and access its elements
+
+```text
+touch f1 f2 f3
+files=($(ls))
+echo $files      # f1
+echo ${files[0]} # f1
+echo ${files[1]} # f2
+echo ${files[@]} # f1 f2 f3
+```
+
 ## Q&A
 
-Can trap function perfrom endless loop if it fails and `set -e ?`
+What it a command in trap function exits with non-zero status?
 
 ```bash
 set -e 
@@ -88,7 +101,7 @@ trap cleanup ERR
 ls nonexisting_file
 ```
 
-No, it will be performed only once.
+From above the `set -e` would suggest that a trap function could be called endlessly. Luckily that's not the case, so you can sleep well.
 
 
 
