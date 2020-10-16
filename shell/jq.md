@@ -1,6 +1,14 @@
 # jq
 
+## Introduction
+
 The `jq` is a very powerful tool. Whenever you think to write your own parser for your JSON document think twice.
+
+
+
+{% hint style="info" %}
+The jq version: 1.6
+{% endhint %}
 
 ## Examples
 

@@ -1,5 +1,11 @@
 # git
 
+## Introduction
+
+{% hint style="info" %}
+The git version: 2.24.0
+{% endhint %}
+
 ## Revert changes
 
 ### Revert changes from few commits

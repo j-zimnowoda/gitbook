@@ -4,9 +4,15 @@ description: All best practices I know about bash
 
 # bash
 
+## Overview
+
+{% hint style="info" %}
+The bash version: 3.2.57
+{% endhint %}
+
 ## Fail on error
 
-Usually, I wanted my script to exit on error. Sounds trivial although it's not. There are number of case that someting can go wrong. The most common are:
+Usually I want my script to exit on error. Sounds trivial although it's not. There are number of case that someting can go wrong. The most common are:
 
 * variable is not set
 * a given command fails during execution
@@ -75,12 +81,11 @@ Can trap function perfrom endless loop if it fails and `set -e ?`
 ```text
 set -e 
 function cleanup {
-  local exitcode=$?
   ls nonexisting_file
-  return $exitcode;
 }
 
-trap cleanup EXIT ERR
+trap cleanup ERR
+ls nonexisting_file
 ```
 
 No, it will be performed only once.
