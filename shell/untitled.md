@@ -32,7 +32,7 @@ A trap on `ERR`, if set, is executed before the shell exits.
 {% hint style="info" %}
  The shell does not exit if the command that fails is part of the test in an`if` statement, part of any command executed in a `&&` or `||` list except the command following the final `&&` or `||`
 
-```text
+```bash
 set -euo pipefail
 [[ 1 > 2 ]] && echo "impossible" || echo "shell exits with 0"
 ```
@@ -47,7 +47,7 @@ Not applicable to special parameters ‘@’ or ‘\*’
 {% hint style="info" %}
 It is possible to use `set -u` and to test variable existence with `-z.`Access variable with default. empty value.
 
-```text
+```bash
 [[ -z "${UNSET_VAR-}" ]] 
 ```
 {% endhint %}
@@ -58,7 +58,7 @@ It is possible to use `set -u` and to test variable existence with `-z.`Access v
 
 Sometimes my script creates temporary files that should be removed regardless script exit code. The following code snippet is a good boilerplate:
 
-```text
+```bash
 function cleanup {
   echo "Remove temporary files"
 }
@@ -70,7 +70,7 @@ trap cleanup EXIT
 
 Try using trap with the below signals What behavior would you expect?
 
-```text
+```bash
 trap cleanup EXIT ERR
 ```
 
@@ -78,7 +78,7 @@ trap cleanup EXIT ERR
 
 Can trap function perfrom endless loop if it fails and `set -e ?`
 
-```text
+```bash
 set -e 
 function cleanup {
   ls nonexisting_file
