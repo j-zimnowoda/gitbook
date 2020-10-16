@@ -76,7 +76,7 @@ trap cleanup EXIT ERR
 
 ## Arrays
 
-Assign list of files and access its elements
+Create array that contains a list of files and access its elements
 
 ```text
 touch f1 f2 f3
