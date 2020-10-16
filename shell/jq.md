@@ -16,7 +16,7 @@ The jq version: 1.6
 
 The package.json needs to be updated with `repository` entry to ensure that `npm publish` uploads artifacts to private github packages.
 
-```text
+```bash
 REPO='myrepo'
 VENDOR='myvendor'
 TARGET_PACKAGE_JSON='package.json'

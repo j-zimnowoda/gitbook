@@ -47,7 +47,7 @@ ovh
 
 **Input**:
 
-```bash
+```yaml
 definitions:
   address:
     type: object
@@ -80,10 +80,8 @@ properties:
 
 **Command**:
 
-```text
+```bash
 yq d test.yaml '**.required.'
-
-
 ```
 
 **Output:**
