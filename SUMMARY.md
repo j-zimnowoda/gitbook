@@ -6,5 +6,5 @@
 
 * [Shell](shell/shell/README.md)
   * [yq](shell/shell/yq.md)
-  * [Untitled](shell/shell/untitled.md)
+  * [bash](shell/shell/untitled.md)
 
