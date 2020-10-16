@@ -68,11 +68,13 @@ trap cleanup EXIT
 
 **Pitfalls**
 
-Try using trap with the below signals. What behavior would you expect if some command fails?
+Try using trap with the below signals. 
 
 ```bash
 trap cleanup EXIT ERR
 ```
+
+What behavior would you expect if some command fails?
 
 ## Arrays
 
