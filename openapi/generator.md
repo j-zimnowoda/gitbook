@@ -4,7 +4,7 @@
 
 Generate typescript API client based on spec OpenApi specification: `api.json`
 
-```text
+```bash
 docker run --rm \
   -v ${PWD}:/local \
   openapitools/openapi-generator-cli generate \
