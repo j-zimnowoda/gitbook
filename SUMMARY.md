@@ -4,11 +4,12 @@
 
 ## shell
 
-* [yq](shell/yq.md)
 * [bash](shell/untitled.md)
-* [Shell](shell/shell.md)
+* [yq](shell/yq.md)
 
-## test
+## DevOps
 
-* [Untitled](test/untitled.md)
+---
+
+* [Helm and Helmfile](helm-and-helmfile.md)
 
