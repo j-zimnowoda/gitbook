@@ -9,7 +9,7 @@ description: Working with YAML files
 The YAML format is becoming the standard for describing any kind of configuration parameters. A common uses case is to extract a given parameter or set of parameters from a YAML file In this article I am going to present some examples that I am often using at my work.
 
 {% hint style="info" %}
-The yq verion: 3.4.0
+The yq version: 3.4.0
 {% endhint %}
 
 ## Examples
