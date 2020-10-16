@@ -5,8 +5,8 @@
 ## shell
 
 * [yq](shell/yq.md)
-* [Shell](shell/shell/README.md)
-  * [bash](shell/shell/untitled.md)
+* [bash](shell/untitled.md)
+* [Shell](shell/shell.md)
 
 ## test
 
