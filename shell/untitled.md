@@ -19,8 +19,6 @@ set -euo pipefail
 
 The `set -e` exits on failure of simple command. The `set -o pipefail` exits on first failed command in pipeline Finally  
 
-{% page-ref page="untitled.md" %}
-
 {% hint style="info" %}
 A trap on `ERR`, if set, is executed before the shell exits. 
 {% endhint %}
