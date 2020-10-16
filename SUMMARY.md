@@ -6,6 +6,7 @@
 
 * [bash](shell/untitled.md)
 * [git](shell/git.md)
+* [jq](shell/jq.md)
 * [yq](shell/yq.md)
 
 ## DevOps
@@ -18,8 +19,4 @@
 ## OpenApi
 
 * [generator](openapi/generator.md)
-
----
-
-* [jq](jq.md)
 
