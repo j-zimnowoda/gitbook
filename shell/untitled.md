@@ -89,7 +89,7 @@ echo ${files[1]} # f2
 echo ${files[@]} # f1 f2 f3
 ```
 
-## \# Improve your skills
+## Improve your skills
 
 Use shell linter against your shell scripts and investigate the output. 
 
