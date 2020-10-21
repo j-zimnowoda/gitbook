@@ -89,6 +89,18 @@ echo ${files[1]} # f2
 echo ${files[@]} # f1 f2 f3
 ```
 
+## \# Improve your skills
+
+Use shell linter against your shell scripts and investigate the output. 
+
+```text
+brew install shellcheck
+```
+
+{% hint style="info" %}
+Add[ shellcheck plugin](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) to vscode
+{% endhint %}
+
 ## Q&A
 
 What it a command in trap function exits with non-zero status?
