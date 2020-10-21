@@ -45,7 +45,7 @@ Not applicable to special parameters ‘@’ or ‘\*’
 {% endhint %}
 
 {% hint style="info" %}
-It is possible to use `set -u` and to test variable existence with `-z.`Access variable with default. empty value.
+It is possible to use `set -u` and to test variable existence with `-z.`Access variable with default empty value.
 
 ```bash
 [[ -z "${UNSET_VAR-}" ]] 
