@@ -20,5 +20,5 @@
 
 ## HOSTING
 
-* [static website](hosting/static-website.md)
+* [Static website](hosting/static-website.md)
 
