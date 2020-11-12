@@ -30,3 +30,7 @@ ${TARGET_PACKAGE_JSON} \
 | sponge ${TARGET_PACKAGE_JSON}
 ```
 
+References:
+
+* [online playground](https://jqplay.org/#)
+
