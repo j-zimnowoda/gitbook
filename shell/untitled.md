@@ -10,6 +10,19 @@ description: All best practices I know about bash
 The bash version: 3.2.57
 {% endhint %}
 
+## Booleans
+
+There are no booleans in Bash.
+
+There is a very interesitng discussion about implementing booleans in bash: [https://stackoverflow.com/questions/2953646/how-can-i-declare-and-use-boolean-variables-in-a-shell-script](https://stackoverflow.com/questions/2953646/how-can-i-declare-and-use-boolean-variables-in-a-shell-script)
+
+In the end, I decided to use `true` and `false` strings for "boolean" flags, as they are the most versatile and secure way of implementing booleans: 
+
+```text
+[[ "$var" == "false" ]]
+[[ "$var" == "true" ]]
+```
+
 ## Fail on error
 
 Usually I want my script to exit on error. Sounds trivial although it's not. There are number of case that someting can go wrong. The most common are:
@@ -123,6 +136,7 @@ From above the `set -e` would suggest that a trap function could be called endle
 
 * [Set builtin](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html#The-Set-Builtin)
 * [Parameter substitution](https://tldp.org/LDP/abs/html/parameter-substitution.html)
+* [Google shell guideline ](https://github.com/google/styleguide/blob/gh-pages/shellguide.md)
 
 
 
