@@ -8,6 +8,7 @@
 * [git](shell/git.md)
 * [jq](shell/jq.md)
 * [yq](shell/yq.md)
+* [curl](shell/curl.md)
 
 ## DevOps
 

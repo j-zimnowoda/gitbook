@@ -30,6 +30,12 @@ ${TARGET_PACKAGE_JSON} \
 | sponge ${TARGET_PACKAGE_JSON}
 ```
 
+Decode JWT
+
+```text
+jq -R 'split(".") | .[1] | @base64d | fromjson' <<< "$JWT"
+```
+
 References:
 
 * [online playground](https://jqplay.org/#)
