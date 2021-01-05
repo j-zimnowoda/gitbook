@@ -18,7 +18,7 @@ Check version
 kubectl get namespace knative-serving -o 'go-template={{index .metadata.labels "serving.knative.dev/release"}}'
 ```
 
-Test routing to internal service
+Test routing to internal Knative service
 
 ```text
 k -n istio-system port-forward svc/cluster-local-gateway 8080:80
