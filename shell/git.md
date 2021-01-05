@@ -6,6 +6,12 @@
 The git version: 2.24.0
 {% endhint %}
 
+## Inpect changes from a given file
+
+```text
+git log -p myfile.yaml
+```
+
 ## Revert changes
 
 ### Revert changes from few commits
