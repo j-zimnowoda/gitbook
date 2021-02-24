@@ -5,10 +5,10 @@
 ## shell
 
 * [bash](shell/untitled.md)
+* [curl](shell/curl.md)
 * [git](shell/git.md)
 * [jq](shell/jq.md)
 * [yq](shell/yq.md)
-* [curl](shell/curl.md)
 
 ## DevOps
 
