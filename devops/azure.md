@@ -6,9 +6,9 @@
 az account list-locations --query "sort_by([].{DisplayName:displayName, Name:name}, &DisplayName)" --output table
 ```
 
-Create service principal with creadentials
+### Create service principal with creadentials
 
-
+[https://docs.microsoft.com/en-us/azure/developer/go/azure-sdk-authorization\#use-file-based-authentication](https://docs.microsoft.com/en-us/azure/developer/go/azure-sdk-authorization#use-file-based-authentication)
 
 ```text
 > az ad sp create-for-rbac --sdk-auth > azure.auth 
@@ -26,4 +26,6 @@ Create service principal with creadentials
   "managementEndpointUrl": "https://management.core.windows.net/"
 }
 ```
+
+
 
