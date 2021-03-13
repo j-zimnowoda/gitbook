@@ -17,6 +17,7 @@
 * [Kubernetes](devops/kubernetes.md)
 * [Google](devops/google.md)
 * [Docker](devops/docker.md)
+* [AWS](devops/aws.md)
 
 ## OpenApi
 
