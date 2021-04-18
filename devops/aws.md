@@ -27,10 +27,10 @@ Simple CLI to work with EC2 instancies
 ```text
 #!/usr/bin/env bash
 
-set -exuo pipefail
+set -euo pipefail
 
 readonly instances="i-0ec0d3dbfd6b2fe21 i-0821e53ef5e54c513"
-readonly sshPrivatekey="$HOME/.ssh/jeho-cks.pem"
+readonly sshPrivatekey="$HOME/.ssh/ec2.pem"
 readonly ec2User='ubuntu'
 
 function dns(){
