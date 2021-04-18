@@ -27,14 +27,14 @@ Simple CLI to work with EC2 instancies
 ```text
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -exuo pipefail
 
 readonly instances="i-0ec0d3dbfd6b2fe21 i-0821e53ef5e54c513"
 readonly sshPrivatekey="$HOME/.ssh/ec2.pem"
 readonly ec2User='ubuntu'
 
 function dns(){
-  aws ec2 describe-instances --instance-ids $instances | jq '.Reservations[].Instances[].PublicDnsName' --raw-output
+  aws ec2 describe-instances --instance-ids $instances | jq '.Reservations[].Instances[] | .PublicDnsName,.Tags' --raw-output
 }
 
 function start(){
@@ -55,6 +55,7 @@ function help(){
   echo "Usage:
     connect <domain> - Connect to a given EC2 instance
     dns - Get PublicDnsName of all EC2 instances (defined in \$instances)
+    help - Print help
     start - Start all instances (defined in \$instances)
     stop - Stop all instances (defined in \$instances)
     "
