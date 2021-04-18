@@ -15,6 +15,6 @@ aws ec2 stop-instances --instance-ids i-04a3559bbecaf4f22 i-0ec0d3dbfd6b2fe21
 Obtain instance public DNS
 
 ```text
-aws ec2 describe-instances --instance-ids i-04a3559bbecaf4f22 i-0ec0d3dbfd6b2fe21 | jq '.Reservations[0].Instances[].PublicDnsName' --raw-output
+aws ec2 describe-instances --instance-ids i-04a3559bbecaf4f22 i-0ec0d3dbfd6b2fe21 | jq '.Reservations[].Instances[].PublicDnsName' --raw-output
 ```
 
