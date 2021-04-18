@@ -22,7 +22,7 @@ aws ec2 describe-instances --instance-ids i-04a3559bbecaf4f22 i-0ec0d3dbfd6b2fe2
 
 
 
-Simple CLI to work with EC2 instancies
+## Simple CLI to work with EC2 instances
 
 ```text
 #!/usr/bin/env bash
