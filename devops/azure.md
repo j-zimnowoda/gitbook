@@ -1,10 +1,24 @@
 # Azure
 
+## Azure DNS
+
+Get all FQDN registered at crtain domain
+
+```text
+resourceGroup='external-dns'
+dnsZone='example.com'
+az network dns record-set a list -g "$resourceGroup" -z "$dnsZone" | jq '.[].fqdn' -r 
+```
+
+## Regions
+
 ### Show regions
 
 ```text
 az account list-locations --query "sort_by([].{DisplayName:displayName, Name:name}, &DisplayName)" --output table
 ```
+
+## Service principal
 
 ### Create service principal with creadentials
 
