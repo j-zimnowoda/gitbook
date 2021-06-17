@@ -14,6 +14,14 @@ List all resources from all namespaces
 kubectl get all -A --show-kind=true
 ```
 
+## Remove namespaces in Terminating state
+
+```text
+for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath='{.items[*].metadata.name}'); do  kubectl get ns $ns -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/$ns/finalize" -f -; done
+```
+
+
+
 ## Istio
 
 Check version
@@ -39,12 +47,6 @@ NS=<namespace-name>
 ROUTE=<route-name>
 MYHOST=$(k -n $NS get route.serving.knative.dev $ROUTE -o jsonpath='{.status.url}' | sed 's/http:\/\///g')
 curl -v -H "Host: $MYHOST" 127.0.0.1:8080
-```
-
-## Remove namespaces in Terminating state
-
-```text
-for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath='{.items[*].metadata.name}'); do  kubectl get ns $ns -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/$ns/finalize" -f -; done
 ```
 
 ## 

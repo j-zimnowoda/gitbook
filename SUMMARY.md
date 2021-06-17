@@ -2,14 +2,6 @@
 
 * [Overview](README.md)
 
-## shell
-
-* [bash](shell/untitled.md)
-* [curl](shell/curl.md)
-* [git](shell/git.md)
-* [jq](shell/jq.md)
-* [yq](shell/yq.md)
-
 ## DevOps
 
 * [Kubernetes](devops/kubernetes.md)
@@ -18,6 +10,14 @@
 * [Google](devops/google.md)
 * [AWS](devops/aws.md)
 * [Azure](devops/azure.md)
+
+## shell
+
+* [bash](shell/untitled.md)
+* [curl](shell/curl.md)
+* [git](shell/git.md)
+* [jq](shell/jq.md)
+* [yq](shell/yq.md)
 
 ## OpenApi
 
