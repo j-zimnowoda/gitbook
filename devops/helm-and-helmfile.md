@@ -4,7 +4,21 @@ description: Keep it DRY
 
 # Helm and Helmfile
 
+## 
+
 ## Useful Helm commands
+
+Show all releases from all deployed or failed namespaces
+
+```text
+helm list -A -a
+```
+
+Show all releases that are not in deployed state
+
+```text
+helm list -A --failed --pending --superseded --uninstalling --uninstalled 
+```
 
 Add chart repo
 
