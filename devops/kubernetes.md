@@ -1,5 +1,19 @@
 # Kubernetes
 
+## Inpsecting resource status
+
+Show events that has abnormal status
+
+```text
+kubectl get events -A --field-selector type!=Normal --sort-by='{.lastTimestamp}'
+```
+
+List all resources from all namespaces
+
+```text
+kubectl get all -A --show-kind=true
+```
+
 ## Istio
 
 Check version
