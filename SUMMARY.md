@@ -12,12 +12,12 @@
 
 ## DevOps
 
-* [Azure](devops/azure.md)
-* [Helm and Helmfile](devops/helm-and-helmfile.md)
 * [Kubernetes](devops/kubernetes.md)
-* [Google](devops/google.md)
+* [Helm and Helmfile](devops/helm-and-helmfile.md)
 * [Docker](devops/docker.md)
+* [Google](devops/google.md)
 * [AWS](devops/aws.md)
+* [Azure](devops/azure.md)
 
 ## OpenApi
 
