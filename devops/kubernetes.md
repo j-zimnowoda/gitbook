@@ -1,6 +1,14 @@
 # Kubernetes
 
-## Inpsecting resource status
+## Kubelet
+
+Explore kubelet logs from last 2 minutes
+
+```text
+sudo journalctl -u kubelet --since "2 minutes ago"
+```
+
+## Inspecting resource status
 
 Show events that has abnormal status
 
