@@ -8,6 +8,16 @@ Explore kubelet logs from last 2 minutes
 sudo journalctl -u kubelet --since "2 minutes ago"
 ```
 
+## Ingress
+
+For each Ingress print all its backends
+
+```text
+k -n istio-system get ingress -A -ojsonpath='{range .items[*]}{.metadata.name} {"\t\t\t"} {.spec.rules[*].http.paths[*].backend.serviceName} {"\n"}'
+```
+
+
+
 ## Inspecting resource status
 
 Show events that has abnormal status
@@ -35,10 +45,21 @@ for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath
 Check version
 
 ```text
+
 istioctl version --remote
 ```
 
+### Gateway
+
+For each gateway print value of `istio` selector
+
+```text
+kubectl get gateway -A -o=jsonpath='{range .items[*]}{.metadata.name}{"\t\t"}{.spec.selector.istio}{"\n"}{end}'
+```
+
 ## Knative 
+
+
 
 Check version
 
