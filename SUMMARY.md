@@ -10,6 +10,7 @@
 * [Google](devops/google.md)
 * [AWS](devops/aws.md)
 * [Azure](devops/azure.md)
+* [Network tools](devops/network-tools.md)
 
 ## shell
 
@@ -26,4 +27,12 @@
 ## HOSTING
 
 * [Static website](hosting/static-website.md)
+
+---
+
+* [Untitled](untitled.md)
+
+## Compute networks
+
+* [Untitled](compute-networks/untitled.md)
 
