@@ -2,11 +2,33 @@
 
 ## General
 
-Show all readource in all namesapces
+Show all resources in all namesapces
 
 
 
-`kubectl api-resources --verbs=list --namespaced -o name \ (⎈ minikube:default) | xargs -n 1 kubectl get --show-kind --ignore-not-found -A`
+```
+kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -A
+```
+
+
+
+
+
+## RBAC
+
+Find all cluster rolebindig that grants roles to unauthenticated users
+
+\`\`\`
+
+```
+k get clusterrolebinding -ojsonpath='{.items[?(@.subjects[].name=="system:unauthenticated")].metadata.name}'
+```
+
+
+
+
+
+``
 
 
 
@@ -30,7 +52,9 @@ k -n istio-system get ingress -A -ojsonpath='{range .items[*]}{.metadata.name} {
 
 
 
-## Inspecting resource status
+## Events
+
+### Inspecting resource status
 
 Show events that has abnormal status
 
@@ -44,7 +68,9 @@ List all resources from all namespaces
 kubectl get all -A --show-kind=true
 ```
 
-## Remove namespaces in Terminating state
+## Namespaces
+
+### Remove namespaces in Terminating state
 
 ```
 for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath='{.items[*].metadata.name}'); do  kubectl get ns $ns -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/$ns/finalize" -f -; done
