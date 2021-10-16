@@ -10,14 +10,14 @@ kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get
 
 ## RBAC
 
-Find all cluster rolebindig that grants roles to unauthenticated users
+Find all (cluster)rolebindigs that grants roles to the unauthenticated users
 
 ```
-k get clusterrolebinding -ojsonpath='{.items[?(@.subjects[].name=="system:unauthenticated")].metadata.name}'
+k get clusterrolebinding -ojson | jq '.items[] | select( .subjects != null) | select( .subjects[].name=="system:unauthenticated") | .metadata.name'
 ```
 
 ```
-k get rolebinding -ojsonpath='{.items[?(@.subjects[].name=="system:unauthenticated")].metadata.name}'
+k get rolebinding -ojson | jq '.items[] | select( .subjects != null) | select( .subjects[].name=="system:unauthenticated") | .metadata.name'
 ```
 
 ## Kubelet
