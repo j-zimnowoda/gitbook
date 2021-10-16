@@ -4,35 +4,21 @@
 
 Show all resources in all namesapces
 
-
-
 ```
 kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -A
 ```
-
-
-
-
 
 ## RBAC
 
 Find all cluster rolebindig that grants roles to unauthenticated users
 
-\`\`\`
-
 ```
 k get clusterrolebinding -ojsonpath='{.items[?(@.subjects[].name=="system:unauthenticated")].metadata.name}'
 ```
 
-
-
-
-
-``
-
-
-
-
+```
+k get rolebinding -ojsonpath='{.items[?(@.subjects[].name=="system:unauthenticated")].metadata.name}'
+```
 
 ## Kubelet
 
