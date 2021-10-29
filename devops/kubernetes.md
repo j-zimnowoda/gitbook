@@ -81,7 +81,9 @@ For each gateway print value of `istio` selector
 kubectl get gateway -A -o=jsonpath='{range .items[*]}{.metadata.name}{"\t\t"}{.spec.selector.istio}{"\n"}{end}'
 ```
 
-## Knative 
+
+
+## Knative&#x20;
 
 
 
@@ -102,4 +104,19 @@ MYHOST=$(k -n $NS get route.serving.knative.dev $ROUTE -o jsonpath='{.status.url
 curl -v -H "Host: $MYHOST" 127.0.0.1:8080
 ```
 
-##
+## Minikube
+
+Start minikube with NetworkPolicies enabled
+
+```
+minikube start --network-plugin=cni --cni=calico --kubernetes-version=1.20.1
+```
+
+Push container images ([read more](https://minikube.sigs.k8s.io/docs/handbook/pushing/#2-push-images-using-cache-command))
+
+```
+minikube cache add alpine:latest
+```
+
+
+
