@@ -10,7 +10,6 @@
 * [Google](devops/google.md)
 * [AWS](devops/aws.md)
 * [Azure](devops/azure.md)
-* [Network tools](devops/network-tools.md)
 
 ## shell
 
@@ -18,21 +17,6 @@
 * [curl](shell/curl.md)
 * [git](shell/git.md)
 * [jq](shell/jq.md)
+* [hey](shell/network-tools.md)
+* [openapitools](shell/generator.md)
 * [yq](shell/yq.md)
-
-## OpenApi
-
-* [API client generation](openapi/generator.md)
-
-## HOSTING
-
-* [Static website](hosting/static-website.md)
-
----
-
-* [Untitled](untitled.md)
-
-## Compute networks
-
-* [Untitled](compute-networks/untitled.md)
-

@@ -16,9 +16,9 @@ There are no booleans in Bash.
 
 There is a very interesitng discussion about implementing booleans in bash: [https://stackoverflow.com/questions/2953646/how-can-i-declare-and-use-boolean-variables-in-a-shell-script](https://stackoverflow.com/questions/2953646/how-can-i-declare-and-use-boolean-variables-in-a-shell-script)
 
-In the end, I decided to use `true` and `false` strings for "boolean" flags, as they are the most versatile and secure way of implementing booleans: 
+In the end, I decided to use `true` and `false` strings for "boolean" flags, as they are the most versatile and secure way of implementing booleans:&#x20;
 
-```text
+```
 [[ "$var" == "false" ]]
 [[ "$var" == "true" ]]
 ```
@@ -36,14 +36,14 @@ By default bash does not fail on the first encountered error. Instead it impassi
 set -euo pipefail
 ```
 
-The `set -e` exits on failure of simple command. The `set -o pipefail` exits on first failed command in pipeline Finally  
+The `set -e `exits on failure of simple command. The` set -o pipefail` exits on first failed command in pipeline Finally &#x20;
 
 {% hint style="info" %}
-A trap on `ERR`, if set, is executed before the shell exits. 
+A trap on `ERR`, if set, is executed before the shell exits.&#x20;
 {% endhint %}
 
 {% hint style="info" %}
- The shell does not exit if the command that fails is part of the test in an`if` statement, part of any command executed in a `&&` or `||` list except the command following the final `&&` or `||`
+&#x20;The shell does not exit if the command that fails is part of the test in an`if` statement, part of any command executed in a `&&` or `||` list except the command following the final `&&` or `||`
 
 ```bash
 set -eo pipefail
@@ -51,14 +51,14 @@ set -eo pipefail
 ```
 {% endhint %}
 
-**Finaly** `set -u`treats unset variables and parameters as an error when performing parameter expansion
+**Finaly **`set -u`treats unset variables and parameters as an error when performing parameter expansion
 
 {% hint style="warning" %}
 Not applicable to special parameters ‘@’ or ‘\*’
 {% endhint %}
 
 {% hint style="info" %}
-It is possible to use `set -u` and to test variable existence with `-z.`Access variable with default empty value.
+It is possible to use` set -u` and to test variable existence with `-z.`Access variable with default empty value.
 
 ```bash
 [[ -z "${UNSET_VAR-}" ]] 
@@ -81,7 +81,7 @@ trap cleanup EXIT
 
 **Pitfalls**
 
-Try using trap with the below signals. 
+Try using trap with the below signals.&#x20;
 
 ```bash
 trap cleanup EXIT ERR
@@ -93,7 +93,7 @@ What behavior would you expect if some command fails?
 
 Create array that contains a list of files and access its elements
 
-```text
+```
 touch f1 f2 f3
 files=($(ls))
 echo $files      # f1
@@ -104,9 +104,9 @@ echo ${files[@]} # f1 f2 f3
 
 ## Improve your skills
 
-Use shell linter against your shell scripts and investigate the output. 
+Use shell linter against your shell scripts and investigate the output.&#x20;
 
-```text
+```
 brew install shellcheck
 ```
 
@@ -114,7 +114,7 @@ brew install shellcheck
 Add[ shellcheck plugin](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) to vscode
 {% endhint %}
 
-## Q&A
+## Q\&A
 
 What it a command in trap function exits with non-zero status?
 
@@ -128,15 +128,13 @@ trap cleanup ERR
 ls nonexisting_file
 ```
 
-From above the `set -e` would suggest that a trap function could be called endlessly. Luckily that's not the case, so you can sleep well.
+From above the `set -e` would suggest that a trap function could be called endlessly. Luckily that's not the case, so you can sleep calm.
 
 
 
 ## References
 
-* [Set builtin](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html#The-Set-Builtin)
+* [Set builtin](https://www.gnu.org/software/bash/manual/html\_node/The-Set-Builtin.html#The-Set-Builtin)
 * [Parameter substitution](https://tldp.org/LDP/abs/html/parameter-substitution.html)
 * [Google shell guideline ](https://github.com/google/styleguide/blob/gh-pages/shellguide.md)
-
-
 

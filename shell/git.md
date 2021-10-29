@@ -10,21 +10,21 @@ The git version: 2.24.0
 
 Show the content of a second last stash:
 
-```text
+```
 g stash show -p stash@{1}
 ```
 
 Apply the content of a second last stash:
 
-```text
+```
 g stash apply stash@{1}
 ```
 
-I prefer `apply` over `pop` as it does not remove content from stash stack
+I prefer `apply` over `pop `as it does not remove content from stash stack
 
 ## Inspect changes from a given file
 
-```text
+```
 git log -p myfile.yaml
 ```
 
@@ -45,4 +45,3 @@ git revert -m 1 62c97c7d1332ef454c044bdf62e029d2b92b0e83
 ```
 
 The `-m` option specifies the parent number of merge commit
-
