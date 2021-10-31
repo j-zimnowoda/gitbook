@@ -22,9 +22,9 @@ Config:
 
 \> The idea behind seccomp is to restrict the system calls that can be made from a process
 
-Some secomp profiles can be found here:  [https://kubernetes.io/docs/tutorials/clusters/seccomp/#create-seccomp-profiles](https://kubernetes.io/docs/tutorials/clusters/seccomp/#create-seccomp-profiles)
-
-Profiles are referenced at POD `spec.securityContext.seccompProfile`-&#x20;
+* Some secomp profiles can be found here:  [https://kubernetes.io/docs/tutorials/clusters/seccomp/#create-seccomp-profiles](https://kubernetes.io/docs/tutorials/clusters/seccomp/#create-seccomp-profiles)
+* It is enabled per node at kubelete.&#x20;
+* Profiles are referenced at POD `spec.securityContext.seccompProfile`
 
 ``
 
