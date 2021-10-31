@@ -10,7 +10,60 @@ Config:
 
 **/etc/sysconfig/selinux**&#x20;
 
-**tools**
+### sestatus
+
+```
+> sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      32
+```
+
+### **Default policies**
+
+#### **targeted**
+
+only network service processes are BUT it enforces memory restrictions for all processes
+
+The file structure of targeted policy is the following:
+
+```
+/etc/selinux/targeted
+├── booleans.subs_dist
+├── contexts
+│   ├── customizable_types
+│   ├── dbus_contexts
+│   ├── default_contexts
+│   ├── default_type
+│   ├── <service name>_context
+│   ├── files
+│   │   ├── file_contexts
+│   ├── users
+│   │   ├── <user name>
+├── logins
+├── setrans.conf
+└── seusers
+```
+
+#### minimum
+
+
+
+#### mls
+
+
+
+* minimum
+* mls
+
+**Other utilities**
 
 * **setenforce**
 * **getenforce**
@@ -26,9 +79,14 @@ Config:
 * It is enabled per node at kubelete.&#x20;
 * Profiles are referenced at POD `spec.securityContext.seccompProfile`
 
-``
+#### Check if seccomp is enabled
 
-References:
+```
+grep CONFIG_SECCOMP= /boot/config-$(uname -r)
+CONFIG_SECCOMP=y
+```
+
+#### References:
 
 * [https://lwn.net/Articles/656307/](https://lwn.net/Articles/656307/)
 * [https://kubernetes.io/docs/tutorials/clusters/seccomp/](https://kubernetes.io/docs/tutorials/clusters/seccomp/)
