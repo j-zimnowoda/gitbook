@@ -2,7 +2,7 @@
 
 
 
-### SELinux
+## SELinux
 
 Config:
 
@@ -92,7 +92,7 @@ After installing this package you will find `setroubleshoot` logs in `/var/log/m
 * restorecon
 * **chcon**
 
-### Seccomp
+## Seccomp
 
 \> The idea behind seccomp is to restrict the system calls that can be made from a process
 
@@ -114,9 +114,15 @@ CONFIG_SECCOMP=y
 
 
 
+## Trivy
 
+Container image security scan
 
+```
+alias dtrivy='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy'
 
+dtrivy image -s HIGH,CRITICAL <image>
+```
 
 *
 * [trivy](https://github.com/aquasecurity/trivy)
