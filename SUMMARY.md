@@ -10,6 +10,7 @@
 * [Google](devops/google.md)
 * [AWS](devops/aws.md)
 * [Azure](devops/azure.md)
+* [Security](devops/security.md)
 
 ## shell
 
