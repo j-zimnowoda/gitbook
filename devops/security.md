@@ -127,3 +127,19 @@ dtrivy image -s HIGH,CRITICAL <image>
 *
 * [trivy](https://github.com/aquasecurity/trivy)
 * [falco](https://falco.org)&#x20;
+
+
+
+## Tracee
+
+If case of error
+
+```
+2021/10/31 16:58:37 missing kernel source code compilation dependency
+```
+
+You need to install kernel headers
+
+```
+apt install linux-headers-$(uname -r)
+```
