@@ -54,14 +54,35 @@ The file structure of targeted policy is the following:
 
 #### minimum
 
-
+tbd
 
 #### mls
 
+tbd
 
+### Context&#x20;
 
-* minimum
-* mls
+Contexts are labels applied to files, directories, ports, and processes. There are four SELinux contexts: User, Role, Type, and Level. The most common context is `Type` context.
+
+The label naming convention determines that type context labels should end with **\_t**, as in **kernel\_t**.
+
+Some rules:
+
+* created files inherit context of their parent
+* moving/coping files preserve context what can cause problems
+* it is possible to reset context to inherit from new parent by calling **restorecon** command
+
+### Debugging SELinux&#x20;
+
+Enable trouble shooting utilities
+
+```
+sudo yum install setroubleshoot-server
+```
+
+After installing this package you will find `setroubleshoot` logs in `/var/log/messages` file. There will be a refernece to command that produces details about alert, e.g.: `sealert -l fe373c17-8e52-4b31-a1be-c336cb88f496`
+
+``
 
 **Other utilities**
 
