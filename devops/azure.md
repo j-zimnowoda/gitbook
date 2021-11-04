@@ -2,9 +2,9 @@
 
 ## Azure DNS
 
-Get all FQDN registered at crtain domain
+Get all FQDN registered at certain domain
 
-```text
+```
 resourceGroup='external-dns'
 dnsZone='example.com'
 az network dns record-set a list -g "$resourceGroup" -z "$dnsZone" | jq '.[].fqdn' -r 
@@ -14,7 +14,7 @@ az network dns record-set a list -g "$resourceGroup" -z "$dnsZone" | jq '.[].fqd
 
 ### Show regions
 
-```text
+```
 az account list-locations --query "sort_by([].{DisplayName:displayName, Name:name}, &DisplayName)" --output table
 ```
 
@@ -22,9 +22,9 @@ az account list-locations --query "sort_by([].{DisplayName:displayName, Name:nam
 
 ### Create service principal with creadentials
 
-[https://docs.microsoft.com/en-us/azure/developer/go/azure-sdk-authorization\#use-file-based-authentication](https://docs.microsoft.com/en-us/azure/developer/go/azure-sdk-authorization#use-file-based-authentication)
+[https://docs.microsoft.com/en-us/azure/developer/go/azure-sdk-authorization#use-file-based-authentication](https://docs.microsoft.com/en-us/azure/developer/go/azure-sdk-authorization#use-file-based-authentication)
 
-```text
+```
 > az ad sp create-for-rbac --sdk-auth > azure.auth 
 > cat azure.auth
 {
@@ -40,6 +40,4 @@ az account list-locations --query "sort_by([].{DisplayName:displayName, Name:nam
   "managementEndpointUrl": "https://management.core.windows.net/"
 }
 ```
-
-
 
