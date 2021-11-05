@@ -2,6 +2,22 @@
 
 
 
+## Apparmor
+
+```
+# Status of all profiles
+aa-status
+# Manage profiles -r enable, -R disable a given profile
+apparmor_parser
+# Generate profle for kubectl
+aa-genprof /usr/bin/kubectl
+
+```
+
+Read more: [https://gitlab.com/apparmor/apparmor/-/wikis/Documentation](https://gitlab.com/apparmor/apparmor/-/wikis/Documentation)
+
+
+
 ## SELinux
 
 Config:
