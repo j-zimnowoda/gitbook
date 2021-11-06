@@ -1,5 +1,13 @@
 # Security
 
+## Worth reading:
+
+{% embed url="https://us-cert.cisa.gov" %}
+
+{% embed url="https://sectools.org/tag/sploits" %}
+
+
+
 
 
 ## Apparmor
