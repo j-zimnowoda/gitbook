@@ -26,6 +26,10 @@ Read more: [https://gitlab.com/apparmor/apparmor/-/wikis/Documentation](https://
 
 
 
+## Falco
+
+tbd
+
 ## SELinux
 
 Config:
@@ -148,11 +152,7 @@ alias dtrivy='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v $H
 dtrivy image -s HIGH,CRITICAL <image>
 ```
 
-*
 * [trivy](https://github.com/aquasecurity/trivy)
-* [falco](https://falco.org)&#x20;
-
-
 
 ## Tracee
 
