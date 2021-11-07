@@ -17,7 +17,7 @@ k get clusterrolebinding -ojson | jq '.items[] | select( .subjects != null) | se
 ```
 
 ```
-k get rolebinding -ojson | jq '.items[] | select( .subjects != null) | select( .subjects[].name=="system:unauthenticated") | .metadata.name'
+k get rolebinding -A -ojson | jq '.items[] | select( .subjects != null) | select( .subjects[].name=="system:unauthenticated") | .metadata.name'
 ```
 
 ## Kubelet
