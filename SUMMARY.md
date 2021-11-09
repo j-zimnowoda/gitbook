@@ -13,7 +13,6 @@
 
 ## tools
 
-* [psql](tools/psql.md)
 * [vim](tools/vim.md)
 * [bash](tools/untitled.md)
 * [curl](tools/curl.md)
@@ -23,4 +22,5 @@
 * [hey](tools/network-tools.md)
 * [openapitools](tools/generator.md)
 * [openssl](tools/openssl.md)
+* [psql](tools/psql.md)
 * [yq](tools/yq.md)
