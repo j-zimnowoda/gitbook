@@ -104,6 +104,14 @@ MYHOST=$(k -n $NS get route.serving.knative.dev $ROUTE -o jsonpath='{.status.url
 curl -v -H "Host: $MYHOST" 127.0.0.1:8080
 ```
 
+## Kubeconfig
+
+Get public certificate for a specific user
+
+```
+cat ~/.kube/config | yq eval -j | jq '.users[] | select(.name=="restricted@infra-prod") |  .user["client-certificate-data"]' -r | base64 -d
+```
+
 ## Minikube
 
 Start minikube with NetworkPolicies enabled

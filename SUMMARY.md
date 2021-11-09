@@ -13,7 +13,7 @@
 
 ## tools
 
-* [sql](tools/sql.md)
+* [psql](tools/psql.md)
 * [vim](tools/vim.md)
 * [bash](tools/untitled.md)
 * [curl](tools/curl.md)
