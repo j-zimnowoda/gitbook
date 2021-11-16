@@ -11,6 +11,7 @@
 * [AWS](devops/aws.md)
 * [Azure](devops/azure.md)
 * [Security](devops/security.md)
+* [Linux](devops/linux.md)
 
 ## tools
 
