@@ -73,6 +73,14 @@ Check version
 istioctl version --remote
 ```
 
+```
+ns='my-ns'
+pod='my-pod'
+kubectl exec -n $ns $pod -- curl -X POST http://localhost:15000/logging\?level\=debug
+```
+
+
+
 ### Gateway
 
 For each gateway print value of `istio` selector
