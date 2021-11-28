@@ -8,6 +8,9 @@ Show all resources in all namesapces
 kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -A
 ```
 
+```
+```
+
 ## RBAC
 
 Find all (cluster)rolebindigs that grants roles to the unauthenticated users
@@ -26,6 +29,20 @@ Explore kubelet logs from last 2 minutes
 
 ```
 sudo journalctl -u kubelet --since "2 minutes ago"
+```
+
+API access
+
+In order to verify if annonymous access to kubelet api is allowed, perform the following command
+
+```
+curl -sk https://localhost:10250/pods
+```
+
+Check if readonly port is disabled
+
+```
+curl -sk https://localhost:10255/metrics
 ```
 
 ## Ingress
@@ -133,6 +150,17 @@ Push container images ([read more](https://minikube.sigs.k8s.io/docs/handbook/pu
 ```
 minikube cache add alpine:latest
 ```
+
+## Secrets
+
+Decode all values in a given secret
+
+```
+name='mysecret'  
+k get "$name" -o json | jq -r '.data[] |= @base64d| .data' | yq e -P
+```
+
+
 
 
 
