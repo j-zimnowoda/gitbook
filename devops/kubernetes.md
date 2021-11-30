@@ -8,9 +8,6 @@ Show all resources in all namesapces
 kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -A
 ```
 
-```
-```
-
 ## RBAC
 
 Find all (cluster)rolebindigs that grants roles to the unauthenticated users
@@ -162,5 +159,41 @@ k get "$name" -o json | jq -r '.data[] |= @base64d| .data' | yq e -P
 
 
 
+Pod
 
+Security context
 
+Seccomp
+
+```
+# /etc/kubernetes/seccomp/profiles/audit.json
+{
+    "defaultAction": "SCMP_ACT_LOG"
+}
+
+```
+
+```
+Reference seccomp profile in Pod security context
+```
+
+```
+# 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: audit-pod
+  labels:
+    app: audit-pod
+spec:
+  securityContext:
+    seccompProfile:
+      type: Localhost
+      localhostProfile: profiles/audit.json
+```
+
+Inspect logs
+
+```json
+grep syscall /var/log
+```
