@@ -159,11 +159,11 @@ k get "$name" -o json | jq -r '.data[] |= @base64d| .data' | yq e -P
 
 
 
-Pod
+## Pods
 
-Security context
+### Security context
 
-Seccomp
+#### Seccomp
 
 ```
 # /etc/kubernetes/seccomp/profiles/audit.json
@@ -173,12 +173,10 @@ Seccomp
 
 ```
 
-```
-Reference seccomp profile in Pod security context
-```
+
 
 ```
-# 
+# Reference seccomp profile in Pod security context
 apiVersion: v1
 kind: Pod
 metadata:
