@@ -166,7 +166,7 @@ k get "$name" -o json | jq -r '.data[] |= @base64d| .data' | yq e -P
 #### Seccomp
 
 ```
-# /etc/kubernetes/seccomp/profiles/audit.json
+# /etc/lib/kubelet/profiles/audit.json
 {
     "defaultAction": "SCMP_ACT_LOG"
 }
