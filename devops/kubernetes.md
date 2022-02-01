@@ -195,3 +195,18 @@ Inspect logs
 ```json
 grep syscall /var/log
 ```
+
+## Get pod labels
+
+```
+k get pod -A -ojsonpath='{range .items[*]}{.metadata.name} {"\n"}{.metadata.labels} {"\n\n"}'
+```
+
+## Service
+
+Get selectors for each service
+
+```
+k get svc -A -ojsonpath='{range .items[*]}{.metadata.name} {"\n"}{.spec.selector} {"\n\n"}
+```
+
